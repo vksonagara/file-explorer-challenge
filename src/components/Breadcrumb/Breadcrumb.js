@@ -19,7 +19,7 @@ export default function Breadcrumb() {
   const current = last(pathname.split("/").filter(node => node !== ""));
   let parentPathNodes = [];
   let currentPath = pathname;
-  while (nodes[currentPath].parent) {
+  while (nodes[currentPath] && nodes[currentPath].parent) {
     currentPath = nodes[currentPath].parent;
     parentPathNodes.push(nodes[currentPath]);
   }

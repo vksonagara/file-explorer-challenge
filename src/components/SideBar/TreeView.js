@@ -5,6 +5,7 @@ import TreeNode from "./TreeNode";
 
 function TreeView() {
   const nodes = useSelector(state => state.tree);
+
   const getChildNodes = node => {
     if (!node.children) return [];
     return node.children.map(path => nodes[path]);

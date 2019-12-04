@@ -7,6 +7,9 @@ const INITIAL_STATE = {
       name: "root",
       path: "/root",
       type: "folder",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       isRoot: true,
       parent: null,
       children: [
@@ -23,6 +26,9 @@ const INITIAL_STATE = {
       path: "/root/apps",
       parent: "/root",
       type: "folder",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     },
     "/root/pictures": {
@@ -30,6 +36,9 @@ const INITIAL_STATE = {
       path: "/root/pictures",
       type: "folder",
       parent: "/root",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     },
     "/root/videos": {
@@ -37,6 +46,9 @@ const INITIAL_STATE = {
       path: "/root/videos",
       type: "folder",
       parent: "/root",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     },
     "/root/docs": {
@@ -44,6 +56,9 @@ const INITIAL_STATE = {
       path: "/root/docs",
       type: "folder",
       parent: "/root",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: ["/root/docs/work", "/root/docs/c.pdf", "/root/docs/d.docx"]
     },
     "/root/a.pdf": {
@@ -51,6 +66,9 @@ const INITIAL_STATE = {
       path: "/root/a.pdf",
       type: "file",
       parent: "/root",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     },
     "/root/b.jpg": {
@@ -58,6 +76,9 @@ const INITIAL_STATE = {
       path: "/root/b.jpg",
       type: "file",
       parent: "/root",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     },
     "/root/docs/work": {
@@ -65,6 +86,9 @@ const INITIAL_STATE = {
       path: "/root/docs/work",
       type: "folder",
       parent: "/root/docs",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: ["/root/docs/work/e.pdf", "/root/docs/work/f.ts"]
     },
     "/root/docs/c.pdf": {
@@ -72,6 +96,9 @@ const INITIAL_STATE = {
       path: "/root/docs/c.pdf",
       type: "file",
       parent: "/root/docs",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     },
     "/root/docs/d.docx": {
@@ -79,6 +106,9 @@ const INITIAL_STATE = {
       path: "/root/docs/d.docx",
       type: "file",
       parent: "/root/docs",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     },
     "/root/docs/work/e.pdf": {
@@ -86,6 +116,9 @@ const INITIAL_STATE = {
       path: "/root/docs/work/e.pdf",
       type: "file",
       parent: "/root/docs/work",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     },
     "/root/docs/work/f.ts": {
@@ -93,6 +126,9 @@ const INITIAL_STATE = {
       path: "/root/docs/work/f.ts",
       type: "file",
       parent: "/root/docs/work",
+      size: 783,
+      creator: "vinod sonagara",
+      date: new Date(),
       children: []
     }
   }

@@ -30,14 +30,33 @@ function deleteNode(tree, path) {
   return resultTree;
 }
 
+function addNode(tree, { name, creator, size, type, parent, date }) {
+  let resultTree = {};
+  let path = `${parent}/${name}`;
+  if (tree[path]) {
+    return tree;
+  } else {
+    resultTree = {
+      ...tree,
+      [path]: { name, path, creator, size, type, date, parent, children: [] }
+    };
+    if (resultTree[parent]) {
+      resultTree[parent].children.push(path);
+    }
+    return resultTree;
+  }
+}
+
 export default function reducer(state, action) {
   switch (action.type) {
-    case ADD_NODE:
-      return state;
-    case DELETE_NODE:
-      const tree = deleteNode(state.tree, action.payload);
-      console.log({ ...state, tree });
+    case ADD_NODE: {
+      const tree = addNode(state.tree, action.payload);
       return { ...state, tree };
+    }
+    case DELETE_NODE: {
+      const tree = deleteNode(state.tree, action.payload);
+      return { ...state, tree };
+    }
     default:
       return state;
   }

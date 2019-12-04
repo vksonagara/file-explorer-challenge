@@ -7,6 +7,10 @@ import { last, reverse } from "lodash";
 const StyledBreadcrumb = styled.span`
   font-size: 24px;
   color: #81878c;
+  a {
+    text-decoration: none;
+    color: #81878c;
+  }
 `;
 
 const Highlight = styled.span`

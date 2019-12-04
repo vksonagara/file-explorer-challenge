@@ -22,9 +22,23 @@ const StyledNodeInfo = styled.div`
 `;
 
 export default function NodeInfo({ path }) {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
   const nodes = useSelector(state => state.tree);
   const node = nodes[path] || null;
-  const { name, type } = node;
+  const { name, type, size, creator, date } = node;
   return (
     <StyledNodeInfo>
       {type === "file" ? (
@@ -36,15 +50,18 @@ export default function NodeInfo({ path }) {
         <span className="key">Name:</span> <span className="value">{name}</span>
       </div>
       <div className="info-line">
-        <span className="key">Size:</span> <span className="value">542kb</span>
+        <span className="key">Size:</span>{" "}
+        <span className="value">{size}kb</span>
       </div>
       <div className="info-line">
         <span className="key">Creator Name:</span>{" "}
-        <span className="value">Vinod Sonagara</span>
+        <span className="value">{creator}</span>
       </div>
       <div className="info-line">
         <span className="key">Created date:</span>{" "}
-        <span className="value">4th Dec, 2019</span>
+        <span className="value">
+          {date.getDate()}th {months[date.getMonth()]}, {date.getFullYear()}
+        </span>
       </div>
     </StyledNodeInfo>
   );

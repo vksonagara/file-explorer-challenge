@@ -63,7 +63,7 @@ export default function Modal({ isOpen, title, handleClose, children }) {
           padding: "2rem 1rem",
           boxShadow: "0 16px 64px 0 rgba(0,0,0,0.08)",
           width: "25%",
-          height: "50%",
+          height: "60%",
           margin: "auto"
         }
       }}

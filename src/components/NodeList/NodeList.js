@@ -13,6 +13,7 @@ const StyledNodeList = styled.div`
   align-items: center;
   flex-flow: row wrap;
   justify-content: flex-start;
+  user-select: none;
   .add-node {
     display: flex;
     flex-direction: column;

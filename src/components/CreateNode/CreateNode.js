@@ -7,7 +7,7 @@ const StyledCreateNode = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 90%;
 `;
 
 export default function CreateNode() {

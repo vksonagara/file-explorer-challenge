@@ -14,6 +14,7 @@ const StyledSearch = styled.input`
   color: #afb2b6;
   &:focus {
     outline: none;
+    width: 400px;
   }
 `;
 

@@ -11,6 +11,9 @@ const StyledTreeNode = styled.div`
   &:hover {
     background: #eeeff1;
   }
+  a {
+    text-decoration: none;
+  }
   .label {
     display: flex;
     align-items: center;

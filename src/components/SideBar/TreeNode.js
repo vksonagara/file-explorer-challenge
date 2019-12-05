@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const StyledTreeNode = styled.div`
   display: flex;
   align-items: center;
-  flex-direction: column;
   padding: 1rem 1rem;
   padding-left: ${props => props.level}rem;
+  height: 2rem;
   &:hover {
     background: #eeeff1;
   }
@@ -20,6 +20,8 @@ const StyledTreeNode = styled.div`
     justify-content: space-between;
     width: 100%;
     .node-label {
+      display: flex;
+      align-items: center;
       font-size: 16px;
       color: #2f363f;
       border: none;

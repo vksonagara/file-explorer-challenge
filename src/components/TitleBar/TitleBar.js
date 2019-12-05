@@ -10,6 +10,10 @@ const StyledTitleBar = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  .up {
+    display: flex;
+    align-items: center;
+  }
   .titlebar-left {
     display: flex;
     align-items: center;
@@ -28,7 +32,7 @@ export default function TitleBar() {
   return (
     <StyledTitleBar>
       <div className="titlebar-left">
-        <Link to={path}>
+        <Link to={path} className="up">
           <img
             className="titlebar-icon"
             src="/arrow-green-circle.png"

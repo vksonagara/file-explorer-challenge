@@ -4,16 +4,18 @@ import { useLocation, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { last, reverse } from "lodash";
 
-const StyledBreadcrumb = styled.span`
+const StyledBreadcrumb = styled.div`
   font-size: 24px;
   color: #81878c;
+  display: flex;
+  align-items: center;
   a {
     text-decoration: none;
     color: #81878c;
   }
 `;
 
-const Highlight = styled.span`
+const Highlight = styled.p`
   color: #001800;
 `;
 

@@ -12,10 +12,14 @@ const StyledNode = styled.div`
   margin-bottom: 1rem;
   flex-basis: 15%;
   padding: 0.5rem 0;
+  background-color: transparent;
+  transition: background-color 0.5s;
   &:hover {
     cursor: pointer;
-    background: ${props =>
-      props.type === "folder" ? "#E6F5FF" : "rgba(253, 205, 84, 0.3)"};
+    background-color: ${props =>
+      props.type === "folder"
+        ? "rgba(71, 184, 255, 0.2)"
+        : "rgba(253, 205, 84, 0.2)"};
     border-radius: 8px;
   }
   div.react-contextmenu-wrapper {
@@ -31,8 +35,7 @@ const StyledNode = styled.div`
   }
 `;
 
-export default function Node(props) {
-  const { name, type, path } = props.node;
+export default function Node({ node: { name, type, path } }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const [infoPath, setInfoPath] = useState("");

@@ -2,7 +2,7 @@ import React from "react";
 import ReactModal from "react-modal";
 import styled from "styled-components";
 
-const StyleContent = styled.div`
+const StyledContent = styled.div`
   font-family: "lato", sans-serif;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ export default function Modal({ isOpen, title, handleClose, children }) {
       }}
       ariaHideApp={false}
     >
-      <StyleContent>
+      <StyledContent>
         <div className="header">
           <h2 className="center">{title}</h2>
           <button onClick={handleClose} className="right">
@@ -77,7 +77,7 @@ export default function Modal({ isOpen, title, handleClose, children }) {
           </button>
         </div>
         {children}
-      </StyleContent>
+      </StyledContent>
     </ReactModal>
   );
 }

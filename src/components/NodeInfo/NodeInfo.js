@@ -58,6 +58,10 @@ export default function NodeInfo({ path }) {
         <span className="value">{creator}</span>
       </div>
       <div className="info-line">
+        <span className="key">Absolute Path:</span>{" "}
+        <span className="value">{path}</span>
+      </div>
+      <div className="info-line">
         <span className="key">Created date:</span>{" "}
         <span className="value">
           {date.getDate()}th {months[date.getMonth()]}, {date.getFullYear()}

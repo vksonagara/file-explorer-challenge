@@ -40,6 +40,7 @@ const StyledContainer = styled.div`
     p {
       padding: 0 1rem;
     }
+    z-index: 1;
   }
 `;
 

@@ -19,6 +19,15 @@ const StyledNodeInfo = styled.div`
   .image {
     padding: 2rem 0;
   }
+  div.file-icon {
+    position: relative;
+  }
+  div.extension {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+  }
 `;
 
 export default function NodeInfo({ path }) {
@@ -42,7 +51,12 @@ export default function NodeInfo({ path }) {
   return (
     <StyledNodeInfo>
       {type === "file" ? (
-        <img src="/file.png" alt="file" className="image" />
+        <div className="file-icon">
+          <img src="/file.png" alt="file" />
+          <div className="extension">
+            {name.split(".")[1] ? `.${name.split(".")[1]}` : ""}
+          </div>
+        </div>
       ) : (
         <img src="/folder.png" alt="folder" className="image" />
       )}

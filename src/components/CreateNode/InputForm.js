@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Field, Formik } from "formik";
 import styled from "styled-components";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { ADD_NODE } from "../../store/types";
 
@@ -80,7 +80,7 @@ const StyleInputForm = styled.div`
   }
 `;
 
-const InputForm = ({ errors, touched, isSubmitting }) => {
+const InputForm = ({ errors, touched, isSubmitting, status }) => {
   return (
     <StyleInputForm>
       <Form className="form">
@@ -131,6 +131,7 @@ const InputForm = ({ errors, touched, isSubmitting }) => {
           className={`field ${touched.size && errors.size && "error-field"}`}
         />
         {touched.size && errors.size && <p className="error">{errors.size}</p>}
+        {status && status.error && <p className="error">{status.error}</p>}
         <button type="submit" className="button" disabled={isSubmitting}>
           Create
         </button>
@@ -142,6 +143,7 @@ const InputForm = ({ errors, touched, isSubmitting }) => {
 const FormikInputForm = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
+  const nodes = useSelector(state => state.tree);
 
   return (
     <Formik
@@ -152,13 +154,21 @@ const FormikInputForm = () => {
         type: "file"
       }}
       onSubmit={(values, { setSubmitting, resetForm, setStatus }) => {
-        const date = new Date();
-        dispatch({
-          type: ADD_NODE,
-          payload: { ...values, parent: pathname, date }
-        });
-        setSubmitting(false);
-        resetForm();
+        if (nodes[`${pathname}/${values.name}`]) {
+          console.log("found");
+          setStatus({
+            error: "File/Folder name already exists"
+          });
+          setSubmitting(false);
+        } else {
+          const date = new Date();
+          dispatch({
+            type: ADD_NODE,
+            payload: { ...values, parent: pathname, date }
+          });
+          setSubmitting(false);
+          resetForm();
+        }
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string()

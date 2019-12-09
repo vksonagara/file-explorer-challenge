@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import NodeInfo from "../NodeInfo/NodeInfo";
 import Modal from "../Modal/Modal";
 
@@ -27,11 +28,16 @@ const StyledNode = styled.button`
 
 export default function Node({ node: { name, type, path } }) {
   const [infoPath, setInfoPath] = useState("");
+  const history = useHistory();
   const handleInfoClose = () => {
     setInfoPath("");
   };
   const handleClick = () => {
-    setInfoPath(path);
+    if (type === "folder") {
+      history.push(path);
+    } else {
+      setInfoPath(path);
+    }
   };
   return (
     <>

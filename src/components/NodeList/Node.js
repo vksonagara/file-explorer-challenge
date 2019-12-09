@@ -33,6 +33,15 @@ const StyledNode = styled.div`
   div.label {
     padding-top: 20px;
   }
+  div.file-icon {
+    position: relative;
+  }
+  div.extension {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+  }
 `;
 
 export default function Node({ node: { name, type, path } }) {
@@ -68,7 +77,12 @@ export default function Node({ node: { name, type, path } }) {
       <StyledNode onDoubleClick={handleDoubleClick({ path, type })} type={type}>
         <ContextMenuTrigger id={path}>
           {type === "file" ? (
-            <img src="/file.png" alt="file" />
+            <div className="file-icon">
+              <img src="/file.png" alt="file" />
+              <div className="extension">
+                {name.split(".")[1] ? `.${name.split(".")[1]}` : ""}
+              </div>
+            </div>
           ) : (
             <img src="/folder.png" alt="file" />
           )}
